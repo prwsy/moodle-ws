@@ -1,0 +1,34 @@
+{
+  "name": "moodle-ws",
+  "version": "1.0.0",
+  "description": "Moodle Web Services Client for Node js",
+  "main": "dist/index.js",
+  "files": [
+    "/dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "start": "ts-node src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "moodle",
+    "mdl",
+    "webservices",
+    "nodejs",
+    "javascript",
+    "typescript",
+    "moodle web services"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^22.4.0",
+    "axios": "^1.7.4",
+    "dotenv": "^16.4.5",
+    "typescript": "^5.5.4"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.2"
+  }
+}
