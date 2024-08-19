@@ -5,7 +5,7 @@ Moodle Web Services (Core Api's) wrapper for nodejs. Written in TypeScript.
 ## Installation
 
 ```bash
-$ npm i moodle-ws
+$ npm i moodle-ws-2
 ```
 
 ## Environment/Setup
@@ -31,7 +31,7 @@ $ npm i moodle-ws
 
 
     ```typescript
-        import { MoodleClient  } from 'moodle-ws';
+        import { MoodleClient  } from 'moodle-ws-2';
 
         //call a new instance
         const mws = new MoodleClient();
