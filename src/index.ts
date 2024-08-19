@@ -1,6 +1,6 @@
 import dotenv from 'dotenv';
 import { MwsClient } from './mws-client';
-import { EnrollmentPayload, MoodleUser, UnEnrollPayload, UpdateMoodleUserPayload } from './interfaces/types';
+import { MoodleUser, EnrollmentPayload, UnEnrollPayload, UpdateMoodleUserPayload } from './interfaces/types';
 
 dotenv.config();
 
@@ -33,4 +33,4 @@ export async function unEnrollUser(unEnrollPayload: UnEnrollPayload) {
     return await client.unEnrollUser(unEnrollPayload)
 }
 
-export { MwsClient }
+export { MwsClient, MoodleUser, UpdateMoodleUserPayload, EnrollmentPayload, UnEnrollPayload }
