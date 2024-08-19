@@ -3,6 +3,7 @@
   "version": "1.0.2",
   "description": "Moodle Web Services Client for Node js",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "files": [
     "/dist"
   ],
