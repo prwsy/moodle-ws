@@ -25,11 +25,11 @@ export async function updateUser(user: UpdateMoodleUserPayload) {
     return await client.updateUser(user)
 }
 
-export async function enrollUser(enrollmentPayload: EnrollmentPayload) {
+export async function enrollUser(enrollmentPayload: EnrollmentPayload[]) {
     return await client.enrollUser(enrollmentPayload)
 }
 
-export async function unEnrollUser(unEnrollPayload: UnEnrollPayload) {
+export async function unEnrollUser(unEnrollPayload: UnEnrollPayload[]) {
     return await client.unEnrollUser(unEnrollPayload)
 }
 

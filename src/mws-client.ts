@@ -99,10 +99,10 @@ export class MwsClient implements MwsService {
         }
     }
 
-    async enrollUser(enrollmenPayload: EnrollmentPayload): Promise<any> {
+    async enrollUser(enrollmenPayload: EnrollmentPayload[]): Promise<any> {
         try {
             await this.callWebService('enrol_manual_enrol_users', {
-                enrolments: [enrollmenPayload],
+                enrolments: enrollmenPayload,
             });
             return 'enrolled'
         } catch (error) {
@@ -110,10 +110,10 @@ export class MwsClient implements MwsService {
         }
     }
 
-    async unEnrollUser(unEnrollPayload: UnEnrollPayload): Promise<any> {
+    async unEnrollUser(unEnrollPayload: UnEnrollPayload[]): Promise<any> {
         try {
             await this.callWebService('enrol_manual_unenrol_users', {
-                enrolments: [unEnrollPayload],
+                enrolments: unEnrollPayload,
             });
             return 'unenrolled'
         } catch (error) {
