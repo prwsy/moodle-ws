@@ -26,7 +26,6 @@ export class MwsClient implements MwsService {
                     service: this.service
                 },
             });
-            console.log(response)
             if (response.data.token) {
                 this.token = response.data.token;
                 return this.token as string;
@@ -34,7 +33,6 @@ export class MwsClient implements MwsService {
                 throw new Error('Token not found in response');
             }
         } catch (error) {
-            console.log(error)
             if (error instanceof AxiosError) {
                 throw new Error(`Failed to obtain token: ${error.message}`);
             }
@@ -54,9 +52,6 @@ export class MwsClient implements MwsService {
                     ...params,
                 },
             });
-            if (response.data.exception) {
-                throw new Error(`Moodle API error: ${response.data.message}`);
-            }
             return response.data;
         } catch (error) {
             if (error instanceof AxiosError) {
@@ -106,12 +101,10 @@ export class MwsClient implements MwsService {
 
     async enrollUser(enrollmenPayload: EnrollmentPayload): Promise<any> {
         try {
-            const response = await this.callWebService('enrol_manual_enrol_users', {
-                users: [enrollmenPayload],
+            await this.callWebService('enrol_manual_enrol_users', {
+                enrolments: [enrollmenPayload],
             });
-            if (response) {
-                return 'enrolled'
-            }
+            return 'enrolled'
         } catch (error) {
             throw new Error(`Web service call failed: ${(error as Error).message}`);
         }
@@ -119,12 +112,10 @@ export class MwsClient implements MwsService {
 
     async unEnrollUser(unEnrollPayload: UnEnrollPayload): Promise<any> {
         try {
-            const response = await this.callWebService('enrol_manual_unenrol_users', {
-                users: [unEnrollPayload],
+            await this.callWebService('enrol_manual_unenrol_users', {
+                enrolments: [unEnrollPayload],
             });
-            if (response) {
-                return 'unenrolled'
-            }
+            return 'unenrolled'
         } catch (error) {
             throw new Error(`Web service call failed: ${(error as Error).message}`);
         }
